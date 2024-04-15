@@ -8,7 +8,7 @@ public class User {
     String password;
     String css;
 
-    public User(String username, String password) throws MalformedURLException {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
         css = username + ".css";

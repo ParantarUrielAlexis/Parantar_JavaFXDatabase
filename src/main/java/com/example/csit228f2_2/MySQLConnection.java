@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MySQLConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/javafxjavadb";
+    private static final String URL = "jdbc:mysql://localhost:3306/cipherkeydatabase";
     private static final String USERNAME = "hello";
     private static final String PASSWORD = "hello123";
 
