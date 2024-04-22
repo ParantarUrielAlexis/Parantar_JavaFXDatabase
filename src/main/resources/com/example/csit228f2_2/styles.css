@@ -1,3 +1,63 @@
-.root {
-    -fx-background-color: black;
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marmelad&display=swap');
+
+.anchor-pane {
+    -fx-background-image: url("coolbackground.png");
 }
+
+.anchor-pane-register {
+    -fx-background-image: url("registerbackground.png");
+}
+
+
+
+/*General label CSS*/
+.label {
+    -fx-font-size: 14px; /* Font size */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-family: "Mulish", Helvetica, Arial, sans-serif; /* Font family */
+}
+/*General text field CSS*/
+.text-field {
+    -fx-background-color: transparent; /* Transparent background */
+    -fx-text-fill: #333333; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-font-family: "Marmelad", sans-serif;
+    -fx-font-weight: 400;
+    -fx-font-style: normal;
+}
+
+/*General button CSS*/
+.button {
+    -fx-background-color: #f8f8ff;
+    -fx-text-fill: 	#003153;
+    -fx-border-width: 2px;
+    -fx-border-radius: 0px;
+    -fx-padding: 12px 24px; /* Increase padding to increase button size */
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-background-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #ffffff; /* Darker shade of green on hover */
+    -fx-text-fill: #003153;
+    -fx-border-radius: 20px;
+    -fx-transition: border-radius 1s ease, background-color 1s ease;
+}
+
+/*Result CSS*/
+.result {
+    -fx-font-size: 12px; /* Font size */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-family: "Mulish", Helvetica, Arial, sans-serif; /* Font family */
+}
+
+.admin-label {
+    -fx-font-size: 30px; /* Font size */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-family: "Mulish", Helvetica, Arial, sans-serif; /* Font family */
+}
+
+
+

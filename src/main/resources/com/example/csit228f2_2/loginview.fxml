@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="anchor-pane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.HelloController">
+    <Label layoutX="314.0" layoutY="208.0" prefHeight="39.0" prefWidth="91.0" stylesheets="@styles.css" text="Username">
+        <font>
+            <Font name="Arial Bold" size="13.0" />
+        </font>
+    </Label>
+    <TextField fx:id="usernameTextField" layoutX="304.0" layoutY="247.0" prefHeight="39.0" prefWidth="374.0" promptText="Username must be atleast 6 characters" styleClass="text-field" stylesheets="@styles.css" />
+    <Label layoutX="314.0" layoutY="292.0" prefHeight="39.0" prefWidth="91.0" stylesheets="@styles.css" text="Password">
+        <font>
+            <Font name="Arial Bold" size="13.0" />
+        </font>
+    </Label>
+    <Button fx:id="loginButton" layoutX="335.0" layoutY="390.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="44.0" prefWidth="304.0" stylesheets="@styles.css" text="Login" textFill="WHITE">
+        <font>
+            <Font name="Symbol" size="13.0" />
+        </font>
+    </Button>
+    <PasswordField fx:id="passwordPassField" layoutX="306.0" layoutY="331.0" prefHeight="39.0" prefWidth="362.0" promptText="Enter Password" styleClass="text-field" stylesheets="@styles.css" />
+    <Label fx:id="resultLabel" alignment="CENTER" layoutX="384.0" layoutY="500.0" prefHeight="15.0" prefWidth="230.0">
+        <font>
+            <Font name="Tahoma" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="registerLabel" layoutX="384.0" layoutY="470.0" onMouseClicked="#registerSceneLabel" onMouseEntered="#registerLabelHoverEntered" onMouseExited="#registerLabelHoverExited" onMousePressed="#registerLabelPressed" styleClass="result" stylesheets="@styles.css" text="Don't have an account? Register here" textFill="#c7c7c7">
+        <font>
+            <Font name="Arial" size="12.0" />
+        </font>
+        <style>
+            -fx-text-fill: #c7c7c7;
+        </style>
+    </Label>
+   <stylesheets>
+      <URL value="@styles.css" />
+      <URL value="@styles.css" />
+   </stylesheets>
+
+</AnchorPane>

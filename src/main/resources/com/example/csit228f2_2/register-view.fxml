@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="anchor-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.HelloController">
+    <Label layoutX="22.0" layoutY="108.0" text="Username">
+        <font>
+            <Font name="Arial Bold" size="13.0" />
+        </font>
+    </Label>
+    <TextField fx:id="usernameTextField" layoutX="91.0" layoutY="103.0" prefHeight="25.0" prefWidth="174.0" promptText="Input must be atleast 6 char..." />
+    <Label layoutX="23.0" layoutY="164.0" text="Password">
+        <font>
+            <Font name="Arial Bold" size="13.0" />
+        </font>
+    </Label>
+    <Button layoutX="28.0" layoutY="215.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="25.0" prefWidth="234.0" style="-fx-background-color: #000080;" text="Register" textFill="WHITE">
+        <font>
+            <Font name="Symbol" size="13.0" />
+        </font>
+    </Button>
+    <PasswordField fx:id="passwordPassField" layoutX="91.0" layoutY="160.0" prefHeight="25.0" prefWidth="174.0" promptText="Password" />
+    <Label fx:id="resultLabel" alignment="CENTER" layoutX="37.0" layoutY="284.0" prefHeight="15.0" prefWidth="230.0">
+        <font>
+            <Font name="Tahoma" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="loginLabel" layoutX="44.0" layoutY="320.0" onMouseClicked="#loginSceneLabel" onMouseEntered="#loginLabelHoverEntered" onMouseExited="#loginLabelHoverExited" onMousePressed="#loginLabelPressed" text="Already have an account? Login here" textFill="#c7c7c7">
+        <font>
+            <Font name="Arial" size="12.0" />
+        </font>
+        <style>
+            -fx-text-fill: #c7c7c7;
+        </style>
+    </Label>
+    <ProgressBar fx:id="passwordProgressBar" layoutX="92.0" layoutY="191.0" prefHeight="18.0" prefWidth="172.0" progress="0.0" />
+
+</AnchorPane>
