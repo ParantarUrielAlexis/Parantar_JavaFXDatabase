@@ -104,7 +104,7 @@ public class TableViewController implements Initializable {
             for (int i : batchResult) {
                 if (i == Statement.EXECUTE_FAILED) {
                     System.out.println("One of the statements in the batch failed.");
-                    // TODO result label
+                    // TODO result label if fail insert
                 }
             }
 
@@ -115,8 +115,7 @@ public class TableViewController implements Initializable {
             table.getItems().clear();
             table.getItems().addAll(retrieveData());
 
-            // TODO result label
-            System.out.println("Batch insert completed successfully.");
+            // TODO result label for batch insert
 
         }
     }
