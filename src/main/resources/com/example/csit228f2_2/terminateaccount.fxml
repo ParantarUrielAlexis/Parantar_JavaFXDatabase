@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="190.0" prefWidth="300.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228f2_2.HelloController">
+   <children>
+      <Pane prefHeight="81.0" prefWidth="300.0" style="-fx-background-color: #003153;">
+         <children>
+            <Label layoutX="16.0" prefHeight="40.0" prefWidth="275.0" text="CAUTION! SUBMIT DELETES ACCOUNT" />
+            <Label layoutX="76.0" layoutY="40.0" text="AND EXITS PROGRAM" />
+         </children>
+      </Pane>
+       <Button layoutX="99.0" layoutY="109.0" mnemonicParsing="false" onAction="#terminateAccountOnAction" prefHeight="33.0" prefWidth="104.0" text="Submit" />
+   </children>
+</AnchorPane>

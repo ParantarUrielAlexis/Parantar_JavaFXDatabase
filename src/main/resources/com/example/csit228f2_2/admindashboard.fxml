@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -33,10 +34,26 @@
                <Insets bottom="10.0" />
             </padding>
          </VBox>
+         <ImageView fitHeight="33.0" fitWidth="47.0" layoutX="946.0" layoutY="7.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@logoutbutton.png" />
+            </image></ImageView>
+         <ImageView fitHeight="31.0" fitWidth="59.0" layoutX="899.0" layoutY="6.0" onMouseClicked="#changePassword" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@changepassfinal.png" />
+            </image></ImageView>
+         <ImageView fitHeight="31.0" fitWidth="47.0" layoutX="848.0" layoutY="8.0" onMouseClicked="#terminateAccount" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@terminateaccount.png" />
+            </image>
+         </ImageView>
       </AnchorPane>
    </top>
    <bottom>
-      <AnchorPane prefHeight="37.0" prefWidth="950.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="37.0" prefWidth="950.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="resultLabel2" alignment="CENTER" layoutY="1.0" prefHeight="35.0" prefWidth="1000.0" />
+         </children></AnchorPane>
    </bottom>
    <center>
       <TableView fx:id="table" editable="true" prefHeight="304.0" prefWidth="950.0" BorderPane.alignment="CENTER">

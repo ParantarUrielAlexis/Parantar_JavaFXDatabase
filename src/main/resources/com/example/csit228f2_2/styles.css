@@ -13,15 +13,23 @@
 
 /*General label CSS*/
 .label {
-    -fx-font-size: 14px; /* Font size */
-    -fx-text-fill: white; /* Text color */
-    -fx-font-family: "Mulish", Helvetica, Arial, sans-serif; /* Font family */
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-font-family: "Mulish", Helvetica, Arial, sans-serif;
 }
+
+.choice-box-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-font-family: "Mulish", Helvetica, Arial, sans-serif;
+}
+
+
 /*General text field CSS*/
 .text-field {
-    -fx-background-color: transparent; /* Transparent background */
-    -fx-text-fill: #333333; /* Text color */
-    -fx-font-size: 14px; /* Font size */
+    -fx-background-color: transparent;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
     -fx-font-family: "Marmelad", sans-serif;
     -fx-font-weight: 400;
     -fx-font-style: normal;
@@ -33,14 +41,14 @@
     -fx-text-fill: 	#003153;
     -fx-border-width: 2px;
     -fx-border-radius: 0px;
-    -fx-padding: 12px 24px; /* Increase padding to increase button size */
+    -fx-padding: 12px 24px;
     -fx-font-size: 14px;
     -fx-cursor: hand;
     -fx-background-radius: 5px;
 }
 
 .button:hover {
-    -fx-background-color: #ffffff; /* Darker shade of green on hover */
+    -fx-background-color: #ffffff;
     -fx-text-fill: #003153;
     -fx-border-radius: 20px;
     -fx-transition: border-radius 1s ease, background-color 1s ease;
@@ -48,15 +56,23 @@
 
 /*Result CSS*/
 .result {
-    -fx-font-size: 12px; /* Font size */
-    -fx-text-fill: white; /* Text color */
-    -fx-font-family: "Mulish", Helvetica, Arial, sans-serif; /* Font family */
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-font-family: "Mulish", Helvetica, Arial, sans-serif;
 }
 
 .admin-label {
-    -fx-font-size: 30px; /* Font size */
-    -fx-text-fill: white; /* Text color */
-    -fx-font-family: "Mulish", Helvetica, Arial, sans-serif; /* Font family */
+    -fx-font-size: 30px;
+    -fx-text-fill: white;
+    -fx-font-family: "Mulish", Helvetica, Arial, sans-serif;
+}
+
+.table-column .label {
+    -fx-text-fill: black;
+}
+
+.choice-box-style .arrow-button {
+    -fx-background-color: white;
 }
 
 

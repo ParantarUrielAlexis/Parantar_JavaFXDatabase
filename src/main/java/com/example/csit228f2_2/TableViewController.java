@@ -5,17 +5,27 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.MouseEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
+// TODO remove account
+// TODO log-out of account
+// TODO update password
+
 public class TableViewController implements Initializable {
+    @FXML
+    public static Label resultLabel2;
     @FXML
     private TextField fNameTF;
 
@@ -37,6 +47,7 @@ public class TableViewController implements Initializable {
     @FXML
     private TableColumn<Student, String> schoolProgram;
 
+    // Functions
     public ObservableList<Student> retrieveData() {
         ObservableList<Student> studentList = FXCollections.observableArrayList();
         try (Connection c = MySQLConnection.getConnection();
@@ -62,15 +73,17 @@ public class TableViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        // Initialize table
         fName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         lName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         schoolProgram.setCellValueFactory(new PropertyValueFactory<>("schoolProgram"));
 
         table.setItems(retrieveData());
         editData();
+
     }
 
-    // Insert with batch processing
     public void btnInsertData(ActionEvent ignoredEvent) {
         String firstName = fNameTF.getText();
         String lastName = lNameTF.getText();
@@ -81,12 +94,25 @@ public class TableViewController implements Initializable {
         }
 
         try {
+            // Insert with batch processing
             batchInsertStudent(firstName, lastName, schoolProgram);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
+
+
+    public void editData() {
+        schoolProgram.setCellFactory(TextFieldTableCell.forTableColumn());
+        schoolProgram.setOnEditCommit(e -> {
+            Student student = e.getTableView().getItems().get(e.getTablePosition().getRow());
+            student.setSchoolProgram(e.getNewValue());
+            updateSchoolProgram(student.getFirstName(), student.getLastName(), e.getNewValue());
+        });
+    }
+
+    // Helper functions
     private void batchInsertStudent(String firstName, String lastName, String schoolProgram) throws SQLException {
         try (Connection c = MySQLConnection.getConnection();
              PreparedStatement preparedStatement = c.prepareStatement(
@@ -120,15 +146,6 @@ public class TableViewController implements Initializable {
         }
     }
 
-    public void editData() {
-        schoolProgram.setCellFactory(TextFieldTableCell.forTableColumn());
-        schoolProgram.setOnEditCommit(e -> {
-            Student student = e.getTableView().getItems().get(e.getTablePosition().getRow());
-            student.setSchoolProgram(e.getNewValue());
-            updateSchoolProgram(student.getFirstName(), student.getLastName(), e.getNewValue());
-        });
-    }
-
     private void updateSchoolProgram(String firstName, String lastName, String newSchoolProgram) {
         try (Connection c = MySQLConnection.getConnection();
              PreparedStatement preparedStatement = c.prepareStatement(
@@ -151,7 +168,7 @@ public class TableViewController implements Initializable {
         }
     }
 
-    public void deleteData(ActionEvent event) {
+    public void deleteData(ActionEvent ignoredEvent) {
         TableView.TableViewSelectionModel<Student> selectionModel = table.getSelectionModel();
 
         if (selectionModel.isEmpty()) {
@@ -188,5 +205,18 @@ public class TableViewController implements Initializable {
 
 
         table.getItems().removeAll(selectedItems);
+    }
+
+    // TODO are you sure you want to logout
+    public void logout(MouseEvent event) throws IOException {
+        HelloController.loadAndDisplayScene("loginview.fxml", (Node) event.getSource(), 1000, 600);
+    }
+
+    public void terminateAccount(MouseEvent event) throws IOException {
+        HelloController.loadAndDisplaySceneNotHidden("terminateaccount.fxml",300, 190);
+    }
+
+    public void changePassword(MouseEvent event) throws IOException {
+        HelloController.loadAndDisplaySceneNotHidden("editpassword.fxml",300, 190);
     }
 }
